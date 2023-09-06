@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #elimina y permiso de CDR_stadistica
-sudo rm find . -name '/var/log/asterisk/cdr-csv/64*.csv' -type f -delete
+sudo find /var/log/asterisk/cdr-csv/. -name '64*.csv' -type f -exec rm {} \;
 sudo chmod 777 /var/log/asterisk/cdr-csv/Master-Mes*.csv
 
 cd /root/asterisk
